@@ -2,6 +2,9 @@
     Sublime Text 3 plugin to update list of packages imported
     in a Go (golang) source file (scope: source.go) using 'goimports'
     (http://github.com/bradfitz/goimports)
+
+    Author: Hamid Ghadyani
+    URL: https://github.com/spamwax/goimports-sublime-text-3
 """
 
 import sublime

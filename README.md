@@ -1,7 +1,7 @@
 Sublime Text 3 plugin for 'goimports'
 ========================
 
-This is a plugin for Sublime Text 3 that will use [goimports](http://github.com/bradfitz/goimports "goimports repository") to tidy/clean/add/remove packge imports in your
+This is a plugin for Sublime Text 3 that will use [goimports](http://github.com/bradfitz/goimports "goimports repository") to tidy/clean/add/remove package imports in your
 Go (golang) source code based on what you have used in it.
 
 - ***Makes sure you read the [goimports](http://github.com/bradfitz/goimports "goimports repository") notes and understand its limitations.*** Consider this as a disclaimer as well. This plugin ***___modifies your code___*** upon saving and any bug in [goimports](http://github.com/bradfitz/goimports "goimports repository") is likely to affect your precious code!
@@ -18,7 +18,7 @@ $ cd ~/Library/Application Support/Sublime Text 3/Packages/
 $ git clote https://github.com/spamwax/goimports-sublime-text-3.git GoImports
 ```
 
-If you haven't alreadu installed [goimports](http://github.com/bradfitz/goimports "goimports repository") package, do so by issuing this:
+If you haven't already installed [goimports](http://github.com/bradfitz/goimports "goimports repository") package, do so by issuing this:
 
 `$ go get github.com/bradfitz/goimports`
 
@@ -41,12 +41,12 @@ On every save, the plugin will pass the content of the current Go (golang) file 
 replace it with the output that it provides ***iff*** there were no errors encountered.
 
 You can do the same thing by pressing the 'F4' key or choosing the menu item `Run GoImports`
-from `Toos > GoImports` menu in Sublime Text 3.
+from `Tools > GoImports` menu in Sublime Text 3.
 
-Limitiations/Issues
+Limitations/Issues
 -
 Since this plugin uses [goimports](http://github.com/bradfitz/goimports "goimports repository"), it will be inherently limited to that tool's issues.
-One main issue I encounterd was when the 3-rd party package name did not match its folder name.
+One main issue I encountered was when the 3-rd party package name did not match its folder name.
 
 In this case [goimports](http://github.com/bradfitz/goimports "goimports repository") removes the package import. To fix this, import the packages like so (named package)
 
@@ -58,7 +58,7 @@ Alfred "bitbucket.org/listboss/go-alfred"
 
 TODO
 -
-- Automatically parse GOPATH's 'bin' folders to fint the `goimports` binary.
+- Automatically parse GOPATH's 'bin' folders to find the `goimports` binary.
 If not found try to install it. Finally Alert the user about how to install and
 set the settings.
 

@@ -1,7 +1,5 @@
-goimports-sublime-text-3
-========================
-
 Sublime Text 3 plugin for 'goimports'
+========================
 
 This is a plugin for Sublime Text 3 that will use [goimports](http://github.com/bradfitz/goimports "goimports repository") to tidy/clean/add/remove packge imports in your
 Go (golang) source code based on what you have used in it.

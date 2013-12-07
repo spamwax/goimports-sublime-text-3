@@ -20,7 +20,7 @@ SETTINGS_FILE = "GoImports.sublime-settings"
 
 def plugin_loaded():
     global s
-    s = sublime.load_settings("GoImports.sublime-settings")
+    s = sublime.load_settings(SETTINGS_FILE)
 
 
 class GoImportsException(Exception):

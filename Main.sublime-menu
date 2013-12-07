@@ -1,0 +1,40 @@
+[
+  {
+    "id": "tools",
+    "children": [
+      {
+        "id": "goimports",
+        "caption": "GoImports",
+        "children": [
+          {
+            "caption": "Run GoImports",
+            "command": "goimportsrun"
+          }
+          // {
+          //   "caption": "Settings",
+          //   "command": "open_goimports_sublime_settings"
+          // }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "preferences",
+    "children": [
+      {
+        "id": "package-settings",
+        "children": [
+          {
+            "caption": "GoImports",
+            "children": [
+              {
+                "caption": "Settings - User",
+                "command": "open_goimports_sublime_settings"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

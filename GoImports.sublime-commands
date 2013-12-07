@@ -1,0 +1,10 @@
+[
+  {
+    "caption": "GoImports: Plugin Options",
+    "command": "open_goimports_sublime_settings"
+  },
+  {
+    "caption": "Prettify Code",
+    "command": "goimportsrun"
+  }
+]

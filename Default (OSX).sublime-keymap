@@ -1,0 +1,14 @@
+[
+  {
+    "keys": [
+      "f4"
+    ],
+    "command": "goimportsrun"
+  },
+  {
+    "keys": [
+      "f6"
+    ],
+    "command": "open_goimports_sublime_settings"
+  }
+]

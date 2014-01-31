@@ -15,7 +15,7 @@ On OSX, this will be:
 ```bash
 
 $ cd ~/Library/Application Support/Sublime Text 3/Packages/
-$ git clote https://github.com/spamwax/goimports-sublime-text-3.git GoImports
+$ git clone https://github.com/spamwax/goimports-sublime-text-3.git GoImports
 ```
 
 If you haven't already installed [goimports](http://github.com/bradfitz/goimports "goimports repository") package, do so by issuing this:

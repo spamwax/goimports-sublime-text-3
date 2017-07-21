@@ -3,11 +3,5 @@
   "goimports_bin": "/usr/local/bin/goimports",
 
   // enable/disable plugin
-  "goimports_enabled": true,
-
-  // Use tabs to format the source (default: false)
-  "use_tabs": false,
-
-  // Tab width (default: 4)
-  "tab_width": 4
+  "goimports_enabled": true
 }

@@ -46,25 +46,16 @@ class GoimportsrunCommand(sublime_plugin.TextCommand):
 
         # Get the path to goimports binary.
         # you can install using:
-        # $ go get github.com/bradfitz/goimports
+        # $ go get -u golang.org/x/tools/cmd/goimports
         goimports_cmd = s.get("goimports_bin")
 
-        # Get formatting settings
-        tabs_arg = " -tabs=false"
-        if s.get("use_tabs", self.view.settings().get("use_tabs", False)):
-            tabs_arg = tabs_arg.replace("false", "true")
-        tabwidth_arg = " -tabwidth=4 "
-        w = s.get("tab_width", self.view.settings().get("tab_width", 4))
-        tabwidth_arg = tabwidth_arg.replace("4", str(w))
-
-        # Save current text into a temp file
-        tempPath = save_tmp(self.view)
-        cmd = goimports_cmd + tabs_arg + tabwidth_arg + tempPath
+        # Save current text into a buffer that we can pass as stdin to goimports
+        buf = buffer_text(self.view)
 
         try:
             # Run the 'goimports' command
-            r = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True,
-                                 stderr=subprocess.PIPE).communicate()
+            r = subprocess.Popen(goimports_cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True,
+                                 stderr=subprocess.PIPE).communicate(input=buf)
 
             if len(r[1]) != 0:
                 raise GoImportsException(r[1])
@@ -97,19 +88,9 @@ class Goimportsrun(sublime_plugin.EventListener):
                  view.settings().get("goimports_enabled", True)):
             view.run_command("goimportsrun")
 
-
-def save_tmp(view):
-    f = tempfile.NamedTemporaryFile(delete=False)
-    f.close()
-    tempPath = f.name
-    print("Saving goimports buffer to: " + tempPath)
-
-    bufferText = view.substr(sublime.Region(0, view.size()))
-    f = codecs.open(tempPath, mode='w', encoding='utf-8')
-    f.write(bufferText)
-    f.close()
-    return tempPath
-
+def buffer_text(view):
+    file_text = sublime.Region(0, view.size())
+    return view.substr(file_text).encode('utf-8')
 
 def open_goimports_sublime_settings(window):
     fn = os.path.join(PLUGIN_FOLDER, SETTINGS_FILE)

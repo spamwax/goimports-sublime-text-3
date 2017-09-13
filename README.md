@@ -46,15 +46,6 @@ from `Tools > GoImports` menu in Sublime Text 3.
 Limitations/Issues
 -
 Since this plugin uses [goimports](http://github.com/bradfitz/goimports "goimports repository"), it will be inherently limited to that tool's issues.
-One main issue I encountered was when the 3-rd party package name did not match its folder name.
-
-In this case [goimports](http://github.com/bradfitz/goimports "goimports repository") removes the package import. To fix this, import the packages like so (named package)
-
-```go
-import(
-Alfred "bitbucket.org/listboss/go-alfred"
-)
-```
 
 TODO
 -

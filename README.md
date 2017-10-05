@@ -20,7 +20,7 @@ $ git clone https://github.com/spamwax/goimports-sublime-text-3.git GoImports
 
 If you haven't already installed [goimports](http://github.com/bradfitz/goimports "goimports repository") package, do so by issuing this:
 
-`$ go get github.com/bradfitz/goimports`
+`$ go get golang.org/x/tools/cmd/goimports`
 
 This will add a `goimports` binary file to your GOPATH's bin folder.
 You need to find the path to that binary for the next step.

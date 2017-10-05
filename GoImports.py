@@ -54,8 +54,9 @@ class GoimportsrunCommand(sublime_plugin.TextCommand):
 
         try:
             # Run the 'goimports' command
+            cur_dir = os.path.dirname(self.view.file_name())
             r = subprocess.Popen(goimports_cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True,
-                                 stderr=subprocess.PIPE).communicate(input=buf)
+                                 cwd=cur_dir, stderr=subprocess.PIPE).communicate(input=buf)
 
             if len(r[1]) != 0:
                 raise GoImportsException(r[1])
